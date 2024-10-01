@@ -46,7 +46,7 @@ public class AccountServiceImplParametrizedTest {
         accountServiceImpl.charge(1L, chargeAmount);
 
         ArgumentMatcher<Account> argumentMatcher =
-                account1 -> account1 != null && account1.getAmount().compareTo(expectedAmountLeft) == 0;
+                account1 -> account1 != null && account1.getAmount().equals(expectedAmountLeft);
         verify(accountDao).save(argThat(argumentMatcher));
     }
 

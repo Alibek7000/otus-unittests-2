@@ -38,7 +38,7 @@ public class AccountServiceImplTest {
         accountServiceImpl.addAccount(agreement, "1", 1, new BigDecimal(100));
         ArgumentMatcher<Account> argumentMatcher =
                 account -> account != null && account.getAgreementId() == 1L
-                        && account.getAmount().compareTo(new BigDecimal(100)) == 0
+                        && account.getAmount().equals(new BigDecimal(100))
                         && "1".equals(account.getNumber()) && account.getType().equals(1);
         verify(accountDao).save(argThat(argumentMatcher));
     }

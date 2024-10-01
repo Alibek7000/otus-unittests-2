@@ -41,11 +41,8 @@ public class PaymentProcessorImplWithSpyTest {
 
     @Test
     public void testTransfer() {
-        Agreement sourceAgreement = new Agreement();
-        sourceAgreement.setId(1L);
-
-        Agreement destinationAgreement = new Agreement();
-        destinationAgreement.setId(2L);
+        Agreement sourceAgreement = new Agreement(1L);
+        Agreement destinationAgreement = new Agreement(2L);
 
         Account sourceAccount = new Account();
         sourceAccount.setAmount(BigDecimal.TEN);
@@ -85,11 +82,9 @@ public class PaymentProcessorImplWithSpyTest {
 
     @Test
     public void testTransferWithComission() {
-        Agreement sourceAgreement = new Agreement();
-        sourceAgreement.setId(1L);
+        Agreement sourceAgreement = new Agreement(1L);
 
-        Agreement destinationAgreement = new Agreement();
-        destinationAgreement.setId(2L);
+        Agreement destinationAgreement = new Agreement(2L);
 
         Account sourceAccount = new Account();
         sourceAccount.setId(1L);
